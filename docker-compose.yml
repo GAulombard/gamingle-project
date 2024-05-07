@@ -28,6 +28,14 @@ services:
     command:
       - "start-dev"
 
+  zipkin:
+    container_name: zipkin-gamingle
+    image: openzipkin/zipkin
+    ports:
+      - 9411:9411
+    networks:
+      - gamingle
+
 networks:
   gamingle:
     driver: bridge
